@@ -23,7 +23,9 @@ A Streamlit web application that allows users to virtually try on clothing and a
    ```
    pip install -r requirements.txt
    ```
-3. Configure your Azure OpenAI settings in `config.json`:
+3. Configure your Azure OpenAI settings:
+   - Copy `config.template.json` to `config.json`
+   - Fill in your Azure OpenAI details in `config.json`:
    ```json
    {
        "imagegen_aoai_resource": "your-azure-openai-resource",
@@ -32,6 +34,7 @@ A Streamlit web application that allows users to virtually try on clothing and a
        "imagegen_aoai_api_key": "your-azure-openai-api-key"
    }
    ```
+   > **Note**: `config.json` is listed in `.gitignore` and should not be committed to version control to protect your API keys and other sensitive information.
 
 ## Running the Application
 

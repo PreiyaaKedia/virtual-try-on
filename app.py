@@ -40,6 +40,11 @@ def load_config():
         with open(config_path, "r") as config_file:
             return json.load(config_file)
     except FileNotFoundError:
+        # Check for template file and provide guidance
+        template_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "config.template.json")
+        if os.path.exists(template_path):
+            print("⚠️ config.json not found! Please copy config.template.json to config.json and update with your credentials.")
+            
         # Use environment variables as fallback
         return {
             "imagegen_aoai_resource": os.getenv("imagegen_aoai_resource", ""),

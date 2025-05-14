@@ -1,0 +1,6 @@
+{
+    "imagegen_aoai_resource": "<your-azure-openai-resource-name>",
+    "imagegen_aoai_endpoint": "<your-azure-openai-endpoint>",
+    "imagegen_aoai_deployment": "<your-azure-openai-deployment-name>",
+    "imagegen_aoai_api_key": "<your-azure-openai-api-key>"
+}
