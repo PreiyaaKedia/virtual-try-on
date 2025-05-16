@@ -14,7 +14,7 @@ A Streamlit web application that allows users to virtually try on clothing and a
 
 - Python 3.8 or higher
 - An Azure subscription
-- Azure OpenAI service with DALL-E 3 capabilities
+- Azure OpenAI service with gpt-image-1 capabilities
 
 ## Setup
 
@@ -42,6 +42,26 @@ To run the application locally:
 
 ```
 streamlit run app.py
+```
+
+To deploy the application to cloud as Azure container apps:
+
+1. **Build the Docker image**
+
+```powershell
+docker build -t virtual-try-on:latest .
+```
+
+2. **Run the Docker container**
+
+```powershell
+docker run -p 8501:8501 -v ${PWD}/config.json:/app/config.json virtual-try-on:latest
+```
+
+3. **Once successfully tested, run the batch script for cloud deployment**
+
+```cmd
+deploy_to_azure_container.bat
 ```
 
 ## Directory Structure

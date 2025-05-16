@@ -1,0 +1,21 @@
+name: virtual-try-on
+metadata:
+  template: virtual-try-on@0.0.1-beta
+services:
+  web:
+    project: ./
+    language: python
+    host: appservice
+    hooks:
+      prepackage:
+        windows:
+          shell: pwsh
+          run: copy config.template.json config.json
+          continueOnError: false
+        posix:
+          shell: sh
+          run: cp config.template.json config.json
+          continueOnError: false
+infra:
+  provider: bicep
+  path: infra

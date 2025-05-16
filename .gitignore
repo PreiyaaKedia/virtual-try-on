@@ -1,5 +1,6 @@
 # Ignore configuration files that may contain secrets
 config.json
+.env
 
 # Ignore Python compiled files
 __pycache__/

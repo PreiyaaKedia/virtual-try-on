@@ -2,7 +2,7 @@ import os
 import base64
 from io import BytesIO
 from PIL import Image
-import streamlit as st
+import streamlit_custom as st
 import uuid
 import time
 from functools import lru_cache
